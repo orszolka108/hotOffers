@@ -1,0 +1,78 @@
+@font-face {
+  font-family: "bebasneue_regular";
+  src: url("../fonts/bebasneue_regular.woff2") format('woff2');
+}
+
+html {
+  font-size: 62.5%;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'bebasneue_regular', 'Arial', sans-serif;
+  font-size: 1.4rem;
+  background-color: map_get($colors, background-color);
+}
+
+
+.container {
+  $columnNum: 12;
+  display: flex;
+  width: 100%;
+  max-width: 1024px;
+  margin: 0 auto;
+  @for $i from 1 through $columnNum {
+    .col-#{$i} {
+      width: (100%/$columnNum * $i);
+    }
+  }
+}
+
+/* ------------------------------------------------------------- */
+/* heading */
+/* ------------------------------------------------------------- */
+.heading {
+  margin-top: 10px;
+  padding-top: 10px;
+  .heading-title {
+    font-size: 3.6rem;
+    color: map_get($colors, text-color);
+    letter-spacing: 0.2rem;
+    font-weight: 100;
+  }
+  .heading-sorting {
+    text-align: right;
+    font-size: 20px;
+    color: map_get($colors, text-sorting);
+    .sorting-title {
+      margin-right: 20px;
+      display: inline-block;
+    }
+    .sorting-price{
+      cursor: pointer;
+      position: relative;
+      margin-right: 30px;
+      display: inline-block;
+    }
+    .sorting-up {
+      position: absolute;
+      top: -5px;
+      right: -20px;
+
+    }
+    .sorting-down {
+      position: absolute;
+      right: -20px;
+      top: 5px;
+    }
+  }
+}
+
+/* ------------------------------------------------------------- */
+/* offers */
+/* ------------------------------------------------------------- */
