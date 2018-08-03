@@ -3,6 +3,14 @@
   src: url("../fonts/bebasneue_regular.woff2") format('woff2');
 }
 
+@font-face {
+  font-family: 'source_sans_pro';
+  src: url('../fonts/sourcesanspro-regular.woff2') format('woff2'),
+  url('../fonts/sourcesanspro-regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
+}
 img {
   width: 100%;
 }
@@ -172,15 +180,91 @@ body {
 
 .offer-info {
   color: map_get($colors, box-text-color);
-  padding: 10px;
-  .info-title {
-    font-size: 2rem;
-    margin-bottom: 10px;
+  .info {
+    padding: 10px;
+    .info-title {
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+    .info-list {
+      list-style: none;
+      font-family: "source_sans_pro", sans-serif;
+      .info-list-el {
+        display: table;
+        line-height: 1.5;
+        width: 100%;
+        span {
+          display: table-cell;
+        }
+        .left {
+          width: 40%;
+        }
+      }
+    }
   }
-  .info-list {
+
+}
+
+.offer-info {
+  .info-prices {
     list-style: none;
-    line-height: 20px;
-    .info-el {
+    width: 100%;
+    line-height: 1.5;
+    height: 95%;
+    background-color: map_get($colors, prices-background);
+    font-size: 2.9vh;
+    padding-top: 0.74vh;
+    .info-prices-el {
+      display: table;
+      width: 100%;
+      height: 31%;
+      span {
+        line-height: 1;
+        vertical-align: middle;
+        display: table-cell;
+        width: 50%;
+      }
+      .prices-title {
+        padding-left: 15px;
+        font-size: 1.6rem;
+        text-align: left;
+      }
+      .prices-price {
+        padding-right: 30px;
+        text-align: right;
+        white-space: nowrap;
+        position: relative;
+        &:after {
+          content: 'PLN';
+          font-size: 1rem;
+          position: absolute;
+          top:5px;
+          right: 15px;
+
+        }
+      }
+    }
+    .special-price {
+      height: 40%;
+      color: map_get($colors, details-color);
+      background-color: map_get($colors, hot-price-color);
+      font-weight: 900;
+    }
+  }
+  .button {
+    width: 100%;
+    background-color: map_get($colors, details-color);
+    color: map_get($colors, box-color);
+    height: 37%;
+    border: 2px solid map_get($colors, details-color);
+    font-family: "bebasneue_regular", sans-serif;
+    font-size: 1.8rem;
+    letter-spacing: 1px;
+    cursor: pointer;
+    &:hover {
+      background-color: map_get($colors, box-color);
+      color: map_get($colors, details-color);
     }
   }
 }
+
