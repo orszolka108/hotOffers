@@ -3,6 +3,10 @@
   src: url("../fonts/bebasneue_regular.woff2") format('woff2');
 }
 
+img {
+  width: 100%;
+}
+
 html {
   font-size: 62.5%;
 }
@@ -76,3 +80,75 @@ body {
 /* ------------------------------------------------------------- */
 /* offers */
 /* ------------------------------------------------------------- */
+
+.offers {
+  margin-top: 25px;
+  .offers-choice {
+    .choice {
+      .choice-title {
+        font-size: 2.2rem;
+        font-weight: 100;
+        letter-spacing: 0.2rem;
+      }
+      .choice-model {
+        font-size: 1.8rem;
+        padding-left: 10px;
+        font-weight: 200;
+        .model-name {
+          cursor: pointer;
+          line-height: 25px;
+          .model {
+            margin-right: 5px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.offers-boxes {
+  .offer-box {
+    margin-bottom: 25px;
+    overflow: hidden;
+    background-color: map_get($colors, box-color);
+    height: 18.8vh;
+    min-height: 180px;
+    .offer-image {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      position: relative;
+      margin: 0;
+      &:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: linear-gradient(to bottom, #828282 0%, rgba(0, 0, 0, 0.25) 38%, transparent 100%);
+      }
+    }
+  }
+}
+
+.offer-box {
+  position: relative;
+  .offer-titles {
+    position: absolute;
+    top: 1.9vh;
+    left: 3.4%;
+    color: map_get($colors, box-color);
+    font-weight: 100;
+    .offer-title {
+      font-size: 2rem;
+      font-weight: 100;
+      word-spacing: 5px;
+      .bold {
+        display: inline-block;
+        font-weight: 600;
+      }
+    }
+
+  }
+}
