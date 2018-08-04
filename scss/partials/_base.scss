@@ -4,6 +4,11 @@
 }
 
 @font-face {
+  font-family: "bebasneue_light";
+  src: url("../fonts/bebasneue_light.woff2") format('woff2');
+}
+
+@font-face {
   font-family: 'source_sans_pro';
   src: url('../fonts/sourcesanspro-regular.woff2') format('woff2'),
   url('../fonts/sourcesanspro-regular.woff') format('woff');
@@ -55,7 +60,8 @@ body {
     font-size: 3.6rem;
     color: map_get($colors, text-color);
     letter-spacing: 0.2rem;
-    font-weight: 100;
+    font-family: "bebasneue_light", sans-serif;
+    font-weight: 600;
   }
   .heading-sorting {
     text-align: right;
@@ -94,9 +100,12 @@ body {
   .offers-choice {
     .choice {
       .choice-title {
-        font-size: 2.2rem;
+        font-size: 2.8rem;
         font-weight: 100;
         letter-spacing: 0.2rem;
+        margin-bottom: 10px;
+        font-family: "bebasneue_light", sans-serif;
+        font-weight: 600;
       }
       .choice-model {
         font-size: 1.8rem;
@@ -185,6 +194,9 @@ body {
     .info-title {
       font-size: 2rem;
       margin-bottom: 10px;
+      .bold {
+        font-weight: 700;
+      }
     }
     .info-list {
       list-style: none;
@@ -261,6 +273,7 @@ body {
     font-size: 1.8rem;
     letter-spacing: 1px;
     cursor: pointer;
+    transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
     &:hover {
       background-color: map_get($colors, box-color);
       color: map_get($colors, details-color);
