@@ -7,25 +7,51 @@ class Offers extends React.Component {
         super(props);
         this.state = {
             models: [],
-            offers: []
+            offers: [],
+            sort: props.sort,
+            model: ''
         }
     }
+    componentWillReceiveProps(props) {
+        console.log(props);
+        this.setState ({
+            sort: props.sort
+        })
+        this.callApi(props.sort, this.state.model)
+    }
+    callApi(sort, model) {
+        let options = [];
+        if (sort != '') {
+            options.push("sort[hot_price]=" + sort)
+        }
+        if (model != '') {
+            options.push("model=" + model)
+        }
+        console.log(options.join('&'))
 
-    componentDidMount() {
+
         const urlModel = `https://stock.ssangyong.pl/api/getHotModels/`;
         const urlOffer = 'https://stock.ssangyong.pl/api/getHotoffers/';
 
-        fetch(urlModel)
+        fetch(urlModel, {
+            method: 'post',
+        })
             .then( resp => resp.json() )
-            .then( data=> {
+            .then( models=> {
                 this.setState({
-                    models: data
+                    models: models
                 })
             })
             .catch((error) => console.log(error));
 
-
-        fetch(urlOffer)
+        fetch(urlOffer, {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json, text/plain, */*',
+                'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            body: options.join('&')
+        })
             .then( resp => resp.json() )
             .then( offers=> {
                 this.setState({
@@ -33,6 +59,10 @@ class Offers extends React.Component {
                 })
             })
             .catch((error) => console.log(error));
+    }
+
+    componentDidMount() {
+       this.callApi('', '');
     }
     renderOffers() {
         return this.state.offers.map (function(item) {
@@ -45,7 +75,6 @@ class Offers extends React.Component {
             let srp = item.params.price.srp.replace("&nbsp;", " ")
             let discount = item.params.price.discount.replace("&nbsp;", " ")
             let hotPrice = item.params.price.hot_price.replace("&nbsp;", " ")
-            console.log(srp)
             return <OfferSingle
                         key={item.id_pojazdy}
                         item={item}
@@ -53,13 +82,13 @@ class Offers extends React.Component {
                         srp={srp}
                         discount={discount}
                         hotPrice={hotPrice}
+                        status={item.status}
             />
         })
     }
 
     renderModels() {
         return this.state.models.map (function (item) {
-            console.log(item.model)
             return <Model key={item.id} item={item} />
         })
     }

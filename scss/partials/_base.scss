@@ -72,12 +72,12 @@ body {
       display: inline-block;
     }
     .sorting-price{
-      cursor: pointer;
       position: relative;
       margin-right: 30px;
       display: inline-block;
     }
     .sorting-up {
+      cursor: crosshair;
       position: absolute;
       top: -5px;
       right: -20px;
@@ -87,6 +87,7 @@ body {
       position: absolute;
       right: -20px;
       top: 5px;
+      cursor: crosshair;
     }
   }
 }
@@ -146,6 +147,9 @@ body {
         background: linear-gradient(to bottom, #828282 0%, rgba(0, 0, 0, 0.25) 38%, transparent 100%);
       }
     }
+  }
+  .sold {
+    color: #00b3ff;
   }
 }
 
@@ -280,4 +284,3 @@ body {
     }
   }
 }
-

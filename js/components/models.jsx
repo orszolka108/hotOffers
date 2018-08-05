@@ -1,5 +1,11 @@
 import React from "react";
 
+class Model extends React.Component {
+    render() {
+
+    }
+}
+
 const Model = ({item}) => (
     <div className="choice-model">
         <label className="model-name">
