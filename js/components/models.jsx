@@ -10,4 +10,3 @@ const Model = ({item}) => (
 )
 
 export {Model}
-
