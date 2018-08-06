@@ -1,0 +1,273 @@
+@font-face {
+  font-family: "bebasneue_regular";
+  src: url(fonts/bebasneue_regular.woff2) format("woff2"); }
+
+@font-face {
+  font-family: "bebasneue_light";
+  src: url(fonts/bebasneue_light.woff2) format("woff2"); }
+
+@font-face {
+  font-family: "bebasneue_bold";
+  src: url(fonts/bebasneue_bold.woff2) format("woff2"); }
+
+@font-face {
+  font-family: 'source_sans_pro';
+  src: url(fonts/sourcesanspro-regular.woff2) format("woff2"), url(fonts/sourcesanspro-regular.woff) format("woff");
+  font-weight: normal;
+  font-style: normal; }
+
+img {
+  width: 100%; }
+
+html {
+  font-size: 62.5%; }
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+body {
+  font-family: 'bebasneue_regular', 'Arial', sans-serif;
+  font-size: 1.4rem;
+  background-color: #f6f6f6; }
+
+@media screen and (max-width: 916px) {
+  body {
+    font-size: 1rem !important; } }
+
+@media screen and (max-width: 645px) {
+  body {
+    font-size: 0.7rem !important; } }
+
+.container {
+  display: flex;
+  width: 100%;
+  max-width: 1024px;
+  margin: 0 auto; }
+  .container .col-1 {
+    width: 8.33333%; }
+  .container .col-2 {
+    width: 16.66667%; }
+  .container .col-3 {
+    width: 25%; }
+  .container .col-4 {
+    width: 33.33333%; }
+  .container .col-5 {
+    width: 41.66667%; }
+  .container .col-6 {
+    width: 50%; }
+  .container .col-7 {
+    width: 58.33333%; }
+  .container .col-8 {
+    width: 66.66667%; }
+  .container .col-9 {
+    width: 75%; }
+  .container .col-10 {
+    width: 83.33333%; }
+  .container .col-11 {
+    width: 91.66667%; }
+  .container .col-12 {
+    width: 100%; }
+
+/* ------------------------------------------------------------- */
+/* heading */
+/* ------------------------------------------------------------- */
+.heading {
+  margin-top: 10px;
+  padding-top: 10px; }
+  .heading .heading-title {
+    font-size: 3.6rem;
+    color: #222222;
+    letter-spacing: 0.2rem;
+    font-family: "bebasneue_light", sans-serif;
+    font-weight: 600; }
+  .heading .heading-sorting {
+    text-align: right;
+    font-size: 20px;
+    color: #5c5c5c; }
+    .heading .heading-sorting .sorting-title {
+      margin-right: 20px;
+      display: inline-block; }
+    .heading .heading-sorting .sorting-price {
+      position: relative;
+      margin-right: 30px;
+      display: inline-block; }
+    .heading .heading-sorting .sorting-up {
+      cursor: crosshair;
+      position: absolute;
+      top: -5px;
+      right: -20px; }
+    .heading .heading-sorting .sorting-down {
+      position: absolute;
+      right: -20px;
+      top: 5px;
+      cursor: crosshair; }
+
+/* ------------------------------------------------------------- */
+/* offers */
+/* ------------------------------------------------------------- */
+.offers {
+  margin-top: 25px; }
+  .offers .offers-choice .choice .choice-title {
+    font-size: 2.8rem;
+    letter-spacing: 0.2rem;
+    margin-bottom: 10px;
+    font-family: "bebasneue_light", sans-serif;
+    font-weight: 600; }
+  .offers .offers-choice .choice .choice-model {
+    font-size: 1.8rem;
+    padding-left: 10px;
+    font-weight: 200; }
+    .offers .offers-choice .choice .choice-model .model-name {
+      cursor: pointer;
+      line-height: 25px; }
+      .offers .offers-choice .choice .choice-model .model-name .model {
+        margin-right: 5px; }
+
+.offers-boxes {
+  position: relative; }
+  .offers-boxes .offer-box {
+    margin-bottom: 25px;
+    overflow: hidden;
+    background-color: #ffffff;
+    height: 18.8vh;
+    min-height: 180px;
+    position: relative; }
+    .offers-boxes .offer-box .offer-image {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      position: relative;
+      margin: 0; }
+      .offers-boxes .offer-box .offer-image:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: linear-gradient(to bottom, #828282 0%, rgba(0, 0, 0, 0.25) 38%, transparent 100%); }
+  .offers-boxes .sold {
+    z-index: 1000;
+    background: repeating-linear-gradient(135deg, #e5e5e5, #e5e5e5 30px, #f6f6f6 30px, #f6f6f6 60px);
+    position: relative; }
+    .offers-boxes .sold:after {
+      content: 'SPRZEDANY';
+      position: absolute;
+      font-size: 7.1vw;
+      transform: translate(-50%, -50%) rotate(-10deg);
+      top: 50%;
+      left: 50%;
+      margin: auto;
+      color: rgba(151, 151, 151, 0.6);
+      z-index: 2;
+      font-family: "bebasneue_bold", sans-serif;
+      letter-spacing: 5px;
+      font-weight: 600; }
+
+.offer-box {
+  position: relative; }
+  .offer-box .offer-titles {
+    position: absolute;
+    top: 1.9vh;
+    left: 3.4%;
+    color: #ffffff;
+    font-weight: 100; }
+    .offer-box .offer-titles .offer-title {
+      font-size: 2rem;
+      font-weight: 100;
+      word-spacing: 5px;
+      margin-left: 10px; }
+      .offer-box .offer-titles .offer-title .bold {
+        display: inline-block;
+        font-weight: 600; }
+      .offer-box .offer-titles .offer-title:before {
+        content: "";
+        width: 5px;
+        height: 90%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: #e02f2f; }
+    .offer-box .offer-titles .new-title {
+      background: linear-gradient(45deg, transparent 5%, #e02f2f 0);
+      padding: 2px 35px 2px 10px;
+      display: inline-block;
+      font-weight: 100;
+      font-size: 1.6rem; }
+
+.offer-info {
+  color: #676767; }
+  .offer-info .info {
+    padding: 10px; }
+    .offer-info .info .info-title {
+      font-size: 2rem;
+      margin-bottom: 10px; }
+      .offer-info .info .info-title .bold {
+        font-weight: 700; }
+    .offer-info .info .info-list {
+      list-style: none;
+      font-family: "source_sans_pro", sans-serif; }
+      .offer-info .info .info-list .info-list-el {
+        display: table;
+        line-height: 1.5;
+        width: 100%; }
+        .offer-info .info .info-list .info-list-el span {
+          display: table-cell; }
+        .offer-info .info .info-list .info-list-el .left {
+          width: 40%; }
+
+.offer-info .info-prices {
+  list-style: none;
+  width: 100%;
+  line-height: 1.5;
+  height: 95%;
+  background-color: #ededed;
+  font-size: 2.9vh;
+  padding-top: 0.74vh; }
+  .offer-info .info-prices .info-prices-el {
+    display: table;
+    width: 100%;
+    height: 31%; }
+    .offer-info .info-prices .info-prices-el span {
+      line-height: 1;
+      vertical-align: middle;
+      display: table-cell;
+      width: 50%; }
+    .offer-info .info-prices .info-prices-el .prices-title {
+      padding-left: 15px;
+      font-size: 1.6rem;
+      text-align: left; }
+    .offer-info .info-prices .info-prices-el .prices-price {
+      padding-right: 30px;
+      text-align: right;
+      white-space: nowrap;
+      position: relative; }
+      .offer-info .info-prices .info-prices-el .prices-price:after {
+        content: 'PLN';
+        font-size: 1rem;
+        position: absolute;
+        top: 5px;
+        right: 15px; }
+  .offer-info .info-prices .special-price {
+    height: 40%;
+    color: #e02f2f;
+    background-color: #e2dddd;
+    font-weight: 900; }
+
+.offer-info .button {
+  width: 100%;
+  background-color: #e02f2f;
+  color: #ffffff;
+  height: 44%;
+  border: 2px solid #e02f2f;
+  font-family: "bebasneue_regular", sans-serif;
+  font-size: 1.8rem;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out, color 0.3s ease-in-out; }
+  .offer-info .button:hover {
+    background-color: #ffffff;
+    color: #e02f2f; }
+
