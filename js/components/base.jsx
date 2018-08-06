@@ -5,18 +5,18 @@ class Base extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            sort: ''
+            sort: 0
         }
     }
     sortAscending = () => {
         this.setState ({
-            sort: 'asc'
+            sort: 1
         })
     }
 
     sortDescending= () => {
         this.setState ({
-            sort: 'desc'
+            sort: 2
         })
     }
 

@@ -1,18 +1,43 @@
 import React from "react";
 
+
 class Model extends React.Component {
-    render() {
+    constructor(props) {
+        super(props);
+        this.state = {
+            item: props.item,
+            isChecked: true,
+            checkedItems: []
+        }
+    }
+    componentWillReceiveProps(props) {
+        this.setState ({
+            item: props.item
+        })
+    }
+
+    toggleChange = () => {
+        if(typeof this.props.toggleModel == "function"){
+            this.props.toggleModel(this.state.item.model)
+        }
 
     }
-}
 
-const Model = ({item}) => (
-    <div className="choice-model">
-        <label className="model-name">
-            <input type="checkbox" className="model" value={item.model}/>
-            {item.model}
-        </label>
-    </div>
-)
+    render() {
+        return (
+            <div className="choice-model">
+                <label className="model-name">
+                    <input
+                        type="checkbox"
+                        className="model"
+                        value={this.state.item.model}
+                        onChange={this.toggleChange}
+                    />
+                        {this.state.item.model}
+                </label>
+            </div>
+        )
+    }
+}
 
 export {Model}

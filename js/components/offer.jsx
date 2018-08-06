@@ -4,7 +4,6 @@ class OfferSingle extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            key: this.props.key,
             item: this.props.item,
             src: this.props.src,
             srp: this.props.srp,
@@ -76,10 +75,6 @@ class OfferSingle extends React.Component {
     }
 }
 
-// const OfferSingle = ({item, src, srp, discount, hotPrice}) => (
-//
-//
-// )
 
 
 export {OfferSingle}

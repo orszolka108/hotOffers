@@ -9,29 +9,38 @@ class Offers extends React.Component {
             models: [],
             offers: [],
             sort: props.sort,
-            model: ''
+            checkedModels: []
         }
     }
     componentWillReceiveProps(props) {
-        console.log(props);
         this.setState ({
             sort: props.sort
         })
-        this.callApi(props.sort, this.state.model)
+        this.callApi(props.sort, this.state.checkedModels)
     }
-    callApi(sort, model) {
+
+
+
+    callApi(sort, checkedModels) {
         let options = [];
-        if (sort != '') {
-            options.push("sort[hot_price]=" + sort)
-        }
-        if (model != '') {
-            options.push("model=" + model)
+        if (sort === 1) {
+            options.push("sort[hot_price]=asc")
+        } else if (sort === 2) {
+            options.push("sort[hot_price]=desc")
         }
         console.log(options.join('&'))
 
+        if (checkedModels.length !== 0) {
+            options.push("model=" + checkedModels.join(','))
+        }
 
-        const urlModel = `https://stock.ssangyong.pl/api/getHotModels/`;
+        let bodyOptions = options.join('&')
+        console.log(bodyOptions)
+
+
+        const urlModel = 'https://stock.ssangyong.pl/api/getHotModels/';
         const urlOffer = 'https://stock.ssangyong.pl/api/getHotoffers/';
+
 
         fetch(urlModel, {
             method: 'post',
@@ -50,7 +59,12 @@ class Offers extends React.Component {
                 'Accept': 'application/json, text/plain, */*',
                 'Content-Type': 'application/x-www-form-urlencoded',
             },
-            body: options.join('&')
+            body: bodyOptions
+
+                // "sort[hot_price]=desc&model=Korando,XLV"
+            // bodyOptions
+                //
+                // options.join('&')
         })
             .then( resp => resp.json() )
             .then( offers=> {
@@ -64,9 +78,10 @@ class Offers extends React.Component {
     componentDidMount() {
        this.callApi('', '');
     }
+
     renderOffers() {
-        return this.state.offers.map (function(item) {
-            //creating src url for photos
+        return this.state.offers.map ((item, index) => {
+            //creating src url for img
             let model = item.params.model.toLowerCase()
             let color = item.params.color.toLowerCase().replace(" ", "_")
             const src = `https://www.ssangyong.pl/konfigurator-images/images/${model}/${item.params.my}/colors/cars/${color}.png`
@@ -76,7 +91,7 @@ class Offers extends React.Component {
             let discount = item.params.price.discount.replace("&nbsp;", " ")
             let hotPrice = item.params.price.hot_price.replace("&nbsp;", " ")
             return <OfferSingle
-                        key={item.id_pojazdy}
+                        key={index}
                         item={item}
                         src={src}
                         srp={srp}
@@ -86,10 +101,26 @@ class Offers extends React.Component {
             />
         })
     }
+    toggleModel = (model) => {
+        let checkedModels = this.state.checkedModels
+        if (checkedModels.includes(model)){
+            checkedModels.pop(model)
+        } else {
+            checkedModels.push(model)
+        }
+        this.setState ({
+            checkedModels: checkedModels
+        })
+        this.callApi(this.state.sort, this.state.checkedModels)
+    }
 
     renderModels() {
-        return this.state.models.map (function (item) {
-            return <Model key={item.id} item={item} />
+        return this.state.models.map ((item, index) => {
+            return <Model
+                key={index}
+                item={item}
+                toggleModel={this.toggleModel}
+            />
         })
     }
 
