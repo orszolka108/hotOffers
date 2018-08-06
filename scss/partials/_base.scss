@@ -26,9 +26,9 @@ img {
   width: 100%;
 }
 
-html {
-  font-size: 62.5%;
-}
+//html {
+//  font-size: 62.5%;
+//}
 
 * {
   margin: 0;
@@ -43,17 +43,25 @@ body {
 }
 
 @media screen and (max-width:955px) {
-  body {
-    font-size: 1rem !important;
+  html {
+    font-size: 50% !important;
+
   }
 }
 
 
-@media screen and (max-width:645px) {
-  body {
-    font-size: 0.7rem !important;
+@media screen and (max-width:660px) {
+  html {
+    font-size: 40% !important;
   }
 }
+
+@media screen and (max-width:465px) {
+  html {
+    font-size: 35% !important;
+  }
+}
+
 
 
 .container {
@@ -315,7 +323,7 @@ body {
     width: 100%;
     background-color: map_get($colors, details-color);
     color: map_get($colors, box-color);
-    height: 44%;
+    height: 38%;
     border: 2px solid map_get($colors, details-color);
     font-family: "bebasneue_regular", sans-serif;
     font-size: 1.8rem;
