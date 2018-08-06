@@ -15,7 +15,7 @@ class Model extends React.Component {
             item: props.item
         })
     }
-
+    //sending child's state to parent
     toggleChange = () => {
         if(typeof this.props.toggleModel == "function"){
             this.props.toggleModel(this.state.item.model)

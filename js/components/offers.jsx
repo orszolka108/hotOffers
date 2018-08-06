@@ -20,7 +20,7 @@ class Offers extends React.Component {
     }
 
 
-
+    //method for fetch API
     callApi(sort, checkedModels) {
         let options = [];
         if (sort === 1) {
@@ -59,12 +59,9 @@ class Offers extends React.Component {
                 'Accept': 'application/json, text/plain, */*',
                 'Content-Type': 'application/x-www-form-urlencoded',
             },
-            body: bodyOptions
+            body: "sort[hot_price]=desc&model=Korando,XLV"
+                    //bodyOptions
 
-                // "sort[hot_price]=desc&model=Korando,XLV"
-            // bodyOptions
-                //
-                // options.join('&')
         })
             .then( resp => resp.json() )
             .then( offers=> {
@@ -78,7 +75,7 @@ class Offers extends React.Component {
     componentDidMount() {
        this.callApi('', '');
     }
-
+    //method for creating offers accordingly to the API offers
     renderOffers() {
         return this.state.offers.map ((item, index) => {
             //creating src url for img
@@ -101,6 +98,7 @@ class Offers extends React.Component {
             />
         })
     }
+    //method responsible for pushing checked models into array, which is being placed into state
     toggleModel = (model) => {
         let checkedModels = this.state.checkedModels
         if (checkedModels.includes(model)){
@@ -113,7 +111,7 @@ class Offers extends React.Component {
         })
         this.callApi(this.state.sort, this.state.checkedModels)
     }
-
+    //method for creating list of available models
     renderModels() {
         return this.state.models.map ((item, index) => {
             return <Model

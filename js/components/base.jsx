@@ -8,6 +8,7 @@ class Base extends React.Component {
             sort: 0
         }
     }
+    //events if user wants to sort elements descending or ascending
     sortAscending = () => {
         this.setState ({
             sort: 1
@@ -19,7 +20,7 @@ class Base extends React.Component {
             sort: 2
         })
     }
-
+    //creating heading with sorting options
     render() {
         return (
             <div>
