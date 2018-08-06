@@ -21,6 +21,7 @@
   font-style: normal;
 
 }
+
 img {
   width: 100%;
 }
@@ -39,6 +40,19 @@ body {
   font-family: 'bebasneue_regular', 'Arial', sans-serif;
   font-size: 1.4rem;
   background-color: map_get($colors, background-color);
+}
+
+@media screen and (max-width:916px) {
+  body {
+    font-size: 1rem !important;
+  }
+}
+
+
+@media screen and (max-width:645px) {
+  body {
+    font-size: 0.7rem !important;
+  }
 }
 
 
@@ -107,7 +121,6 @@ body {
     .choice {
       .choice-title {
         font-size: 2.8rem;
-        font-weight: 100;
         letter-spacing: 0.2rem;
         margin-bottom: 10px;
         font-family: "bebasneue_light", sans-serif;
@@ -169,7 +182,7 @@ body {
     &:after {
       content: 'SPRZEDANY';
       position: absolute;
-      font-size: 8.1vw;
+      font-size: 7.1vw;
       transform: translate(-50%, -50%) rotate(-10deg);
       top: 50%;
       left: 50%;
@@ -177,6 +190,8 @@ body {
       color: rgba(151, 151, 151, 0.6);
       z-index: 2;
       font-family: "bebasneue_bold", sans-serif;
+      letter-spacing: 5px;
+      font-weight: 600;
 
     }
   }
@@ -300,7 +315,7 @@ body {
     width: 100%;
     background-color: map_get($colors, details-color);
     color: map_get($colors, box-color);
-    height: 37%;
+    height: 44%;
     border: 2px solid map_get($colors, details-color);
     font-family: "bebasneue_regular", sans-serif;
     font-size: 1.8rem;
