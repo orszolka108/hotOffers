@@ -19,9 +19,6 @@
 img {
   width: 100%; }
 
-html {
-  font-size: 62.5%; }
-
 * {
   margin: 0;
   padding: 0;
@@ -32,13 +29,17 @@ body {
   font-size: 1.4rem;
   background-color: #f6f6f6; }
 
-@media screen and (max-width: 916px) {
-  body {
-    font-size: 1rem !important; } }
+@media screen and (max-width: 955px) {
+  html {
+    font-size: 50% !important; } }
 
-@media screen and (max-width: 645px) {
-  body {
-    font-size: 0.7rem !important; } }
+@media screen and (max-width: 660px) {
+  html {
+    font-size: 40% !important; } }
+
+@media screen and (max-width: 465px) {
+  html {
+    font-size: 35% !important; } }
 
 .container {
   display: flex;
@@ -224,7 +225,7 @@ body {
   line-height: 1.5;
   height: 95%;
   background-color: #ededed;
-  font-size: 2.9vh;
+  font-size: 2.9vw;
   padding-top: 0.74vh; }
   .offer-info .info-prices .info-prices-el {
     display: table;
@@ -260,7 +261,7 @@ body {
   width: 100%;
   background-color: #e02f2f;
   color: #ffffff;
-  height: 44%;
+  height: 38%;
   border: 2px solid #e02f2f;
   font-family: "bebasneue_regular", sans-serif;
   font-size: 1.8rem;
