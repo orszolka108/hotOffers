@@ -42,9 +42,7 @@ class Offers extends React.Component {
         const urlOffer = 'https://stock.ssangyong.pl/api/getHotoffers/';
 
 
-        fetch(urlModel, {
-            method: 'post',
-        })
+        axios.get(urlModel)
             .then( resp => resp.json() )
             .then( models=> {
                 this.setState({
