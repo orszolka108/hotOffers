@@ -26,9 +26,9 @@ img {
   width: 100%;
 }
 
-//html {
-//  font-size: 62.5%;
-//}
+html {
+  font-size: 62.5%;
+}
 
 * {
   margin: 0;
@@ -44,7 +44,7 @@ body {
 
 @media screen and (max-width:955px) {
   html {
-    font-size: 50% !important;
+    font-size: 55% !important;
 
   }
 }
@@ -52,13 +52,13 @@ body {
 
 @media screen and (max-width:660px) {
   html {
-    font-size: 40% !important;
+    font-size: 50% !important;
   }
 }
 
 @media screen and (max-width:465px) {
   html {
-    font-size: 35% !important;
+    font-size: 40% !important;
   }
 }
 
@@ -257,6 +257,8 @@ body {
     .info-list {
       list-style: none;
       font-family: "source_sans_pro", sans-serif;
+      font-size: 1.2rem;
+
       .info-list-el {
         display: table;
         line-height: 1.5;
@@ -280,7 +282,7 @@ body {
     line-height: 1.5;
     height: 95%;
     background-color: map_get($colors, prices-background);
-    font-size: 2.9vw;
+    font-size: 1.9vw;
     padding-top: 0.74vh;
     .info-prices-el {
       display: table;
