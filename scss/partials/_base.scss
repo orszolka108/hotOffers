@@ -42,10 +42,16 @@ body {
   background-color: map_get($colors, background-color);
 }
 
-@media screen and (max-width:955px) {
+@media screen and (min-width: 760px){
   html {
     font-size: 55% !important;
-
+  }
+  .offer-info {
+    .info {
+      .offer-title-mobile {
+        display: none;
+      }
+    }
   }
 }
 
@@ -69,19 +75,16 @@ body {
     font-size: 3vw !important;
   }
   .offer-info .info-prices .info-prices-el {
-    height: 42px !important;
+    height: 43px !important;
   }
   .offer-info .info-prices .special-price {
-    height: 46px !important;
+    height: 50px !important;
   }
   .offer-info .button {
     height: 43px !important;
   }
-  .offer-info .info-prices {
-    height: 76% !important;
-  }
   .offer-box .offer-titles .offer-title {
-    font-size: 4vw !important;
+    font-size: 3vw !important;
   }
   .offer-info .info .info-list {
     font-size: 1.8vw !important;
@@ -89,6 +92,20 @@ body {
   .offer-info .info-prices .info-prices-el .prices-title {
     font-size: 2.3vw !important;
   }
+  .offer-box .offer-titles {
+    display: none !important;
+  }
+  .offer-info {
+    .info {
+      .offer-title-mobile {
+        font-size: 2.8vw;
+      }
+    }
+  }
+  .offer-info .info-prices .info-prices-el .prices-price {
+      font-size: 150% !important;
+  }
+
 }
 
 
@@ -203,6 +220,16 @@ body {
         left: 0;
         background: linear-gradient(to bottom, #828282 0%, rgba(0, 0, 0, 0.25) 38%, transparent 100%);
       }
+      img {
+        position: absolute;
+        display: block;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        top: 20%;
+        margin: auto;
+        max-height: none;
+      }
     }
   }
   .sold {
@@ -309,14 +336,13 @@ body {
     list-style: none;
     width: 100%;
     line-height: 1.5;
-    height: 95%;
     background-color: map_get($colors, prices-background);
     font-size: 1.9vw;
     padding-top: 0.74vh;
     .info-prices-el {
       display: table;
       width: 100%;
-      height: 31%;
+      height: 40px;
       span {
         line-height: 1;
         vertical-align: middle;
@@ -344,7 +370,7 @@ body {
       }
     }
     .special-price {
-      height: 40%;
+      height: 48px;
       color: map_get($colors, details-color);
       background-color: map_get($colors, hot-price-color);
       font-weight: 900;
@@ -354,7 +380,7 @@ body {
     width: 100%;
     background-color: map_get($colors, details-color);
     color: map_get($colors, box-color);
-    height: 38%;
+    height: 42px;
     border: 2px solid map_get($colors, details-color);
     font-family: "bebasneue_regular", sans-serif;
     font-size: 1.8rem;
@@ -365,5 +391,15 @@ body {
       background-color: map_get($colors, box-color);
       color: map_get($colors, details-color);
     }
+  }
+  .button-disable {
+    width: 100%;
+    background: #e2dddd;
+    border: 2px solid #e2dddd;
+    color: white;
+    height: 45px;
+    font-family: "bebasneue_regular", sans-serif;
+    font-size: 1.8rem;
+    letter-spacing: 1px;
   }
 }

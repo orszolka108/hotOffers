@@ -32,9 +32,11 @@ body {
   font-size: 1.4rem;
   background-color: #f6f6f6; }
 
-@media screen and (max-width: 955px) {
+@media screen and (min-width: 760px) {
   html {
-    font-size: 55% !important; } }
+    font-size: 55% !important; }
+  .offer-info .info .offer-title-mobile {
+    display: none; } }
 
 @media screen and (max-width: 760px) {
   html {
@@ -51,19 +53,23 @@ body {
   .info-title {
     font-size: 3vw !important; }
   .offer-info .info-prices .info-prices-el {
-    height: 42px !important; }
+    height: 43px !important; }
   .offer-info .info-prices .special-price {
-    height: 46px !important; }
+    height: 50px !important; }
   .offer-info .button {
     height: 43px !important; }
-  .offer-info .info-prices {
-    height: 76% !important; }
   .offer-box .offer-titles .offer-title {
-    font-size: 4vw !important; }
+    font-size: 3vw !important; }
   .offer-info .info .info-list {
     font-size: 1.8vw !important; }
   .offer-info .info-prices .info-prices-el .prices-title {
-    font-size: 2.3vw !important; } }
+    font-size: 2.3vw !important; }
+  .offer-box .offer-titles {
+    display: none !important; }
+  .offer-info .info .offer-title-mobile {
+    font-size: 2.8vw; }
+  .offer-info .info-prices .info-prices-el .prices-price {
+    font-size: 150% !important; } }
 
 .container {
   display: flex;
@@ -173,6 +179,15 @@ body {
         bottom: 0;
         left: 0;
         background: linear-gradient(to bottom, #828282 0%, rgba(0, 0, 0, 0.25) 38%, transparent 100%); }
+      .offers-boxes .offer-box .offer-image img {
+        position: absolute;
+        display: block;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        top: 20%;
+        margin: auto;
+        max-height: none; }
   .offers-boxes .sold {
     z-index: 1000;
     background: repeating-linear-gradient(135deg, #e5e5e5, #e5e5e5 30px, #f6f6f6 30px, #f6f6f6 60px);
@@ -248,14 +263,13 @@ body {
   list-style: none;
   width: 100%;
   line-height: 1.5;
-  height: 95%;
   background-color: #ededed;
   font-size: 1.9vw;
   padding-top: 0.74vh; }
   .offer-info .info-prices .info-prices-el {
     display: table;
     width: 100%;
-    height: 31%; }
+    height: 40px; }
     .offer-info .info-prices .info-prices-el span {
       line-height: 1;
       vertical-align: middle;
@@ -277,7 +291,7 @@ body {
         top: 5px;
         right: 15px; }
   .offer-info .info-prices .special-price {
-    height: 40%;
+    height: 48px;
     color: #e02f2f;
     background-color: #e2dddd;
     font-weight: 900; }
@@ -286,7 +300,7 @@ body {
   width: 100%;
   background-color: #e02f2f;
   color: #ffffff;
-  height: 38%;
+  height: 42px;
   border: 2px solid #e02f2f;
   font-family: "bebasneue_regular", sans-serif;
   font-size: 1.8rem;
@@ -296,4 +310,14 @@ body {
   .offer-info .button:hover {
     background-color: #ffffff;
     color: #e02f2f; }
+
+.offer-info .button-disable {
+  width: 100%;
+  background: #e2dddd;
+  border: 2px solid #e2dddd;
+  color: white;
+  height: 45px;
+  font-family: "bebasneue_regular", sans-serif;
+  font-size: 1.8rem;
+  letter-spacing: 1px; }
 

@@ -30,6 +30,7 @@ class OfferSingle extends React.Component {
                 <div className="col-8">
                     <div className="offer-info container">
                         <div className="col-7 info">
+                            <h4 className="offer-title-mobile"><span className="bold-mobile">{this.state.item.title}</span></h4>
                             <div className="info-title"><span className="bold"> {this.state.item.params.engine_capacity} {this.state.item.params.fuel_type}</span> {this.state.item.params.transmission} {this.state.item.params.gearbox}| {this.state.item.params.color}
                             </div>
                             <ul className="info-list">
@@ -66,7 +67,7 @@ class OfferSingle extends React.Component {
                                     <span className="prices-price">{this.state.hotPrice}</span>
                                 </li>
                             </ul>
-                            <button className="button">ZAPYTAJ</button>
+                            <button className =  {this.state.status === "sold" ? "button-disable" : "button"}>ZAPYTAJ</button>
                         </div>
                     </div>
                 </div>
