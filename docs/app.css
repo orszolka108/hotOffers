@@ -36,13 +36,34 @@ body {
   html {
     font-size: 55% !important; } }
 
-@media screen and (max-width: 660px) {
+@media screen and (max-width: 760px) {
   html {
-    font-size: 50% !important; } }
-
-@media screen and (max-width: 465px) {
-  html {
-    font-size: 40% !important; } }
+    font-size: 60% !important; }
+  .container .col-3 {
+    width: 100% !important;
+    margin-bottom: 15px; }
+  .offers-choice .choice .choice-model {
+    display: inline-block !important; }
+  .container .col-9 {
+    width: 100% !important; }
+  .container-mobile {
+    display: block !important; }
+  .info-title {
+    font-size: 3vw !important; }
+  .offer-info .info-prices .info-prices-el {
+    height: 42px !important; }
+  .offer-info .info-prices .special-price {
+    height: 46px !important; }
+  .offer-info .button {
+    height: 43px !important; }
+  .offer-info .info-prices {
+    height: 76% !important; }
+  .offer-box .offer-titles .offer-title {
+    font-size: 4vw !important; }
+  .offer-info .info .info-list {
+    font-size: 1.8vw !important; }
+  .offer-info .info-prices .info-prices-el .prices-title {
+    font-size: 2.3vw !important; } }
 
 .container {
   display: flex;

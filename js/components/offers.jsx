@@ -59,8 +59,7 @@ class Offers extends React.Component {
                 'Accept': 'application/json, text/plain, */*',
                 'Content-Type': 'application/x-www-form-urlencoded',
             },
-            body: "sort[hot_price]=desc&model=Korando,XLV"
-                    //bodyOptions
+            body: bodyOptions
 
         })
             .then( resp => resp.json() )
@@ -88,7 +87,7 @@ class Offers extends React.Component {
             let discount = item.params.price.discount.replace("&nbsp;", " ")
             let hotPrice = item.params.price.hot_price.replace("&nbsp;", " ")
             return <OfferSingle
-                        key={index}
+                        key={item.id_pojazdy}
                         item={item}
                         src={src}
                         srp={srp}
@@ -102,7 +101,7 @@ class Offers extends React.Component {
     toggleModel = (model) => {
         let checkedModels = this.state.checkedModels
         if (checkedModels.includes(model)){
-            checkedModels.pop(model)
+            checkedModels.splice(checkedModels.indexOf(model), 1)
         } else {
             checkedModels.push(model)
         }
@@ -124,7 +123,7 @@ class Offers extends React.Component {
 
     render() {
         return (
-            <div className = "container offers" >
+            <div className = "container offers container-mobile" >
                 <div className = "col-3 offers-choice">
                     <div className = "choice">
                         <h3 className = "choice-title" > WYBIERZ MODEL </h3>
