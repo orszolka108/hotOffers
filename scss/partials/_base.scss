@@ -87,7 +87,7 @@ body {
     font-size: 3vw !important;
   }
   .offer-info .info .info-list {
-    font-size: 80% !important;
+    font-size: 85% !important;
     .info-list-el {
       line-height: 1 !important;
     }
@@ -202,7 +202,7 @@ body {
 .offers-boxes {
   position: relative;
   .offer-box {
-    margin-bottom: 25px;
+    margin: 10px;
     overflow: hidden;
     background-color: map_get($colors, box-color);
     height: 18.8vh;
@@ -249,7 +249,7 @@ body {
     &:after {
       content: 'SPRZEDANY';
       position: absolute;
-      font-size: 7.1vw;
+      font-size: 6vw;
       transform: translate(-50%, -50%) rotate(-10deg);
       top: 50%;
       left: 50%;

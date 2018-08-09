@@ -61,7 +61,7 @@ body {
   .offer-box .offer-titles .offer-title {
     font-size: 3vw !important; }
   .offer-info .info .info-list {
-    font-size: 80% !important; }
+    font-size: 85% !important; }
     .offer-info .info .info-list .info-list-el {
       line-height: 1 !important; }
   .offer-info .info-prices .info-prices-el .prices-title {
@@ -161,7 +161,7 @@ body {
 .offers-boxes {
   position: relative; }
   .offers-boxes .offer-box {
-    margin-bottom: 25px;
+    margin: 10px;
     overflow: hidden;
     background-color: #ffffff;
     height: 18.8vh;
@@ -197,7 +197,7 @@ body {
     .offers-boxes .sold:after {
       content: 'SPRZEDANY';
       position: absolute;
-      font-size: 7.1vw;
+      font-size: 6vw;
       transform: translate(-50%, -50%) rotate(-10deg);
       top: 50%;
       left: 50%;
