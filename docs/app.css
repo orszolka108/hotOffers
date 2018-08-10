@@ -193,7 +193,8 @@ body {
   .offers-boxes .sold {
     z-index: 1000;
     background: repeating-linear-gradient(135deg, #e5e5e5, #e5e5e5 30px, #f6f6f6 30px, #f6f6f6 60px);
-    position: relative; }
+    position: relative;
+    padding: 0; }
     .offers-boxes .sold:after {
       content: 'SPRZEDANY';
       position: absolute;
@@ -251,7 +252,7 @@ body {
     .offer-info .info .info-list {
       list-style: none;
       font-family: "source_sans_pro", sans-serif;
-      font-size: 1vw; }
+      font-size: 0.9vw; }
       .offer-info .info .info-list .info-list-el {
         display: table;
         line-height: 1.5;
